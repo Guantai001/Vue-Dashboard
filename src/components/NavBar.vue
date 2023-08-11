@@ -6,7 +6,7 @@
     </div>
    <input
       type="text"
-      class="h-10 px-3 pr-8 text-sm text-grey-darker border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+      class="h-10 bg-gray-100 px-3 pr-8 text-sm text-grey-darker border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
       placeholder="Search by name"
       v-model="searchText"
       @input="handleSearch"
@@ -14,7 +14,7 @@
   </div>
   <div class="flex justify-between mt-5">
     <select
-      class="h-10 px-3 pr-8 text-sm text-grey-darker border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+      class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
       v-model="accessType"
       @change="handleAccessChange"
     >
@@ -25,7 +25,7 @@
     </select>
 
    <select
-        class="h-10 px-3 pr-8 text-sm text-grey-darker border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+        class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
         v-model="statusType"
         @change="handleStatusChange"
         >

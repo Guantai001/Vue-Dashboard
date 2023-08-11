@@ -27,9 +27,11 @@
             <tr class="bg-white border-b " v-for="user in paginatedUsers" :key="user.id">
               <td class="px-6 py-4">{{ user.name }}</td>
               <td class="px-6 py-4">{{ user.username }}</td>
-              <td class="px-6 py-4">{{ user.access }}</td>
+              <td class="px-6 py-4  text-blue-500 ">{{ user.access }}</td>
                <td class="px-6 py-4">{{ user.group }}</td>
-                <td class="px-6 py-4">{{ user.status }}</td>
+               <td :class="{'px-2 py-2 text-green-500 ': user.status === 'enabled', 'px-2 py-2 text-red-500': user.status === 'disabled'}">
+                 {{ user.status }}
+               </td>
                 <td class="px-6 py-4">{{ user.action }}</td>
             </tr>
           </tbody>

@@ -1,7 +1,21 @@
 export const users = [
-  { id: 1, name: 'John Doe', username: "gatobu", access: "mobile & web", group: "1", status: "enabled", action: "1" },
-  { id: 2, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2" },
-  { id: 3, name: 'Michael Johnson', username: "mikej", access: "mobile", group: "1", status: "enabled", action: "3" },
-  { id: 4, name: 'Emily Brown', username: "emilyb", access: "mobile & web", group: "3", status: "enabled", action: "1" },
-  { id: 5, name: 'David Wilson', username: "dwilson", access: "web", group: "2", status: "disabled", action: "2" }
+  { id: 1, name: 'John Doe', username: "gatobu", access: "mobile & web", group: "1", status: "enabled", action: "1" ,date:"1/12/2023"},
+  { id: 2, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2",date:"12/12/2019" },
+  { id: 3, name: 'Michael Johnson', username: "mikej", access: "mobile", group: "1", status: "enabled", action: "3",date:"12/11/2019" },
+  { id: 4, name: 'Emily Brown', username: "emilyb", access: "mobile & web", group: "3", status: "enabled", action: "1",date:"23/12/2023" },
+  { id: 5, name: 'David Wilson', username: "dwilson", access: "web", group: "2", status: "disabled", action: "2", date:"12/11/23"},
+  { id: 6, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2",date:"12/12/2019" },
+  { id: 7, name: 'Michael Johnson', username: "mikej", access: "mobile", group: "1", status: "enabled", action: "3",date:"12/11/2019" },
+  { id: 8, name: 'Emily Brown', username: "emilyb", access: "mobile & web", group: "3", status: "enabled", action: "1",date:"23/12/2023" },
+  { id: 9, name: 'David Wilson', username: "dwilson", access: "web", group: "2", status: "disabled", action: "2", date:"12/11/23"},
+  { id: 10, name: 'John Doe', username: "gatobu", access: "mobile & web", group: "1", status: "enabled", action: "1" ,date:"1/12/2023"},
+  { id: 11, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2",date:"12/12/2019" },
+  { id: 12, name: 'Michael Johnson', username: "mikej", access: "mobile", group: "1", status: "enabled", action: "3",date:"12/11/2019" },
+  { id: 13, name: 'Emily Brown', username: "emilyb", access: "mobile & web", group: "3", status: "enabled", action: "1",date:"23/12/2023" },
+  { id: 14, name: 'David Wilson', username: "dwilson", access: "web", group: "2", status: "disabled", action: "2", date:"12/11/23"},
+  { id: 15, name: 'John Doe', username: "gatobu", access: "mobile & web", group: "1", status: "enabled", action: "1" ,date:"1/12/2023"},
+  { id: 16, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2",date:"12/12/2019" },
+  { id: 17, name: 'Michael Johnson', username: "mikej", access: "mobile", group: "1", status: "enabled", action: "3",date:"12/11/2019" },
+  { id: 18, name: 'Emily Brown', username: "emilyb", access: "mobile & web", group: "3", status: "enabled", action: "1",date:"23/12/2023" },
+  { id: 19, name: 'David Wilson', username: "dwilson", access: "web", group: "2", status: "disabled", action: "2", date:"12/11/23"}
 ];
