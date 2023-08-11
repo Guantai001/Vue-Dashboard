@@ -1,5 +1,5 @@
 export const users = [
-  { id: 1, name: 'John Doe', username: "Doe", access: "Done", group:"1", status:"2", action:"2"},
+  { id: 1, name: 'John Doe', username: "gatobu", access: "Done", group:"1", status:"2", action:"2"},
   { id: 2, name: 'Jane Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
   { id: 3, name: 'John Smith', username: "Doe", access: "Done", group:"1",status:"2",action:"2"},
   { id: 4, name: 'Jane Smith', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
@@ -14,7 +14,6 @@ export const users = [
   { id: 13, name: 'John Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
   { id: 14, name: 'Jane Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
   { id: 15, name: 'John Smith', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 16, name: 'Jane Smith', username: "Doe", access: "Done", group:"1",status:"2",action:"2"},
-
+  { id: 16, name: 'Jane Smith', username: "murimi", access: "Done", group:"1",status:"2",action:"2"},
 
 ];

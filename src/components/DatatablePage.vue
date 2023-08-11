@@ -63,12 +63,12 @@
 
 <script>
 
-import {users} from './userData.js:'
-
 export default {
+  props: {
+    users:Array
+  },
   data() {
     return {
-      users: users ,
       itemsPerPageOptions: [5, 10, 20],
       itemsPerPage: 5,
       currentPage: 1,
