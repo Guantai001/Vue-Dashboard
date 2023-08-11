@@ -11,6 +11,28 @@
       v-model="searchText"
       @input="handleSearch"
     />
+  </div>
+  <div class="flex justify-between mt-5">
+    <select
+      class="h-10 px-3 pr-8 text-sm text-grey-darker border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+      v-model="accessType"
+      @change="handleAccessChange"
+    >
+      <option value="">Select Access type</option>
+      <option value="web">Web</option>
+      <option value="mobile">Mobile</option>
+      <option value="mobile & web">Web & Mobile</option>
+    </select>
+
+   <select
+        class="h-10 px-3 pr-8 text-sm text-grey-darker border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+        v-model="statusType"
+        @change="handleStatusChange"
+        >
+        <option value="">Select Status</option>
+        <option value="enabled">Enabled</option>
+        <option value="disabled">Disabled</option>
+        </select>
 
   </div>
 </template>
@@ -20,13 +42,22 @@ export default {
   name: 'NavBar',
   data() {
     return {
-      searchText: '',
+    searchText: '',
+    accessType: '',
+    statusType: '',
     };
   },
   methods: {
     handleSearch() {
-      this.$emit('search', this.searchText);
+      this.$emit('search', this.searchText,this.accessType,this.statusType);
     },
+    handleAccessChange() {
+      this.$emit('search', this.searchText, this.accessType,this.statusType);
+    },
+    handleStatusChange() {
+      this.$emit('search', this.searchText, this.accessType, this.statusType);
+    },
+    
   },
 };
 </script>

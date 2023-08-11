@@ -1,19 +1,7 @@
 export const users = [
-  { id: 1, name: 'John Doe', username: "gatobu", access: "Done", group:"1", status:"2", action:"2"},
-  { id: 2, name: 'Jane Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 3, name: 'John Smith', username: "Doe", access: "Done", group:"1",status:"2",action:"2"},
-  { id: 4, name: 'Jane Smith', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 5, name: 'John Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 6, name: 'Jane Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 7, name: 'John Smith', username: "Doe", access: "Done", group:"1", status:"2",action:"2"},
-  { id: 8, name: 'Jane Smith', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 9, name: 'John Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 10, name: 'Jane Doe', username: "Doe", access: "Done", group:"1", status:"2",action:"2"},
-  { id: 11, name: 'John Smith', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 12, name: 'Jane Smith', username: "Doe", access: "Done", group:"1",status:"2",action:"2"},
-  { id: 13, name: 'John Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 14, name: 'Jane Doe', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 15, name: 'John Smith', username: "Doe", access: "Done", group:"1",status:"2", action:"2"},
-  { id: 16, name: 'Jane Smith', username: "murimi", access: "Done", group:"1",status:"2",action:"2"},
-
+  { id: 1, name: 'John Doe', username: "gatobu", access: "mobile & web", group: "1", status: "enabled", action: "1" },
+  { id: 2, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2" },
+  { id: 3, name: 'Michael Johnson', username: "mikej", access: "mobile", group: "1", status: "enabled", action: "3" },
+  { id: 4, name: 'Emily Brown', username: "emilyb", access: "mobile & web", group: "3", status: "enabled", action: "1" },
+  { id: 5, name: 'David Wilson', username: "dwilson", access: "web", group: "2", status: "disabled", action: "2" }
 ];
