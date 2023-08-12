@@ -24,23 +24,54 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white border-b " v-for="user in paginatedUsers" :key="user.id">
-              <td class="px-6 py-4">{{ user.name }}</td>
-              <td class="px-6 py-4">{{ user.username }}</td>
-              <td class="px-6 py-4  text-blue-500 ">{{ user.access }}</td>
-               <td class="px-6 py-4">{{ user.group }}</td>
-               <td :class="{'px-2 py-2 text-green-500 ': user.status === 'enabled', 'px-2 py-2 text-red-500': user.status === 'disabled'}">
-                 {{ user.status }}
-               </td>
-                <td class="px-6 py-4">
-            
-       <div class="flex justify-around">
-        <i class="icon pi pi-pencil"></i>
-        <i class="icon pi pi-eye"></i>  
-        <i class="icon pi pi-trash text-red-500" @click="handleDeleteUser(user)"></i>
-        </div>
-             </td>
-            </tr>
+      <tr class="bg-white border-b" v-for="user in paginatedUsers" :key="user.id">
+          <td class="px-6 py-4">
+            <div>
+              <div v-if="user.detailsVisible">****</div>
+              <div v-else>{{ user.name }}</div>
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            <div>
+              <div v-if="user.detailsVisible">****</div>
+              <div v-else>{{ user.username }}</div>
+            </div>
+          </td>
+          <td class="px-6 py-4 text-blue-500">
+            <div>
+              <div v-if="user.detailsVisible">****</div>
+              <div v-else>{{ user.access }}</div>
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            <div>
+              <div v-if="user.detailsVisible">****</div>
+              <div v-else>{{ user.group }}</div>
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            <div>
+              <div v-if="user.detailsVisible">****</div>
+              <div v-else :class="{'text-green-500': user.status === 'enabled', 'text-red-500': user.status === 'disabled'}">
+                {{ user.status }}
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex">
+              <i class="icon pi pi-pencil p-1 border rounded mx-1" @click="handleEditUser(user)"></i>
+<i
+                class="icon pi"
+                :class="{
+                  'pi-eye p-1 rounded border mx-1': !user.detailsVisible,
+                  'pi-eye-slash p-1 rounded border mx-1': user.detailsVisible
+                }"
+                @click="handleToggleUser(user)"
+              ></i>              
+              <i class="icon pi pi-trash text-red-500 border p-1 mx-1 rounded" @click="handleDeleteUser(user)"></i>
+            </div>
+          </td>
+        </tr>
           </tbody>
         </table>
         </div>
@@ -116,7 +147,12 @@ export default {
       if (confirm('Are you sure you want to delete this user?')) {
         this.$emit('delete-user', user);
       }
-      
+      },
+      handleEditUser(user) {
+        this.$emit('edit-user', user);
+      },
+      handleToggleUser(user) {
+      this.$emit('toggle-details', user);
     },
   },
 };
