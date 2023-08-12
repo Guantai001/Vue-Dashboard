@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar @search="handleSearch" />
-    <DatatablePage :users="filteredUsers" /> 
+    <DatatablePage :users="filteredUsers" @delete-user="deleteUser" /> 
    </div>
 </template>
 
@@ -58,6 +58,15 @@ export default {
       this.statusType = statusType;
       this.lableType = lableType;
     },
+      deleteUser(userToDelete) {
+    // Find the index of the user to delete in the users array
+    const indexToDelete = this.users.findIndex(user => user.id === userToDelete.id);
+
+    if (indexToDelete !== -1) {
+      // Remove the user from the users array
+      this.users.splice(indexToDelete, 1);
+    }
+  },
   },
 };
 </script>

@@ -32,7 +32,14 @@
                <td :class="{'px-2 py-2 text-green-500 ': user.status === 'enabled', 'px-2 py-2 text-red-500': user.status === 'disabled'}">
                  {{ user.status }}
                </td>
-                <td class="px-6 py-4">{{ user.action }}</td>
+                <td class="px-6 py-4">
+            
+       <div class="flex justify-around">
+        <i class="icon pi pi-pencil"></i>
+        <i class="icon pi pi-eye"></i>  
+        <i class="icon pi pi-trash text-red-500" @click="handleDeleteUser(user)"></i>
+        </div>
+             </td>
             </tr>
           </tbody>
         </table>
@@ -48,23 +55,25 @@
        <nav aria-label="Page navigation">
           <ul class="pagination flex mt-2 mx-4">
             <li class="page-item mx-2">
-              <a class="page-link" href="#" @click.prevent="prevPage">Previous</a>
+              <a class="page-link" href="#" @click.prevent="prevPage"><i class="icon pi pi-arrow-left"></i></a>
             </li>
             <li class="page-item mx-2" v-for="page in [currentPage]" :key="page" :class="{ 'active': currentPage === page }">
               <a class="page-link" href="#" @click.prevent="gotoPage(page)">{{ page }}</a>
             </li>
             <li class="page-item mx-2">
-              <a class="page-link" href="#" @click.prevent="nextPage">Next</a>
+              <a class="page-link" href="#" @click.prevent="nextPage"><i class="icon pi pi-arrow-right"></i></a>
             </li>
           </ul>
         </nav>
+         <div>
+    </div>
         </div>
 
 </template>
 
 
 <script>
-
+import 'primeicons/primeicons.css';
 export default {
   props: {
     users:Array
@@ -102,6 +111,12 @@ export default {
     },
     changeItemsPerPage() {
       this.currentPage = 1; 
+    },
+   handleDeleteUser(user) {
+      if (confirm('Are you sure you want to delete this user?')) {
+        this.$emit('delete-user', user);
+      }
+      
     },
   },
 };
