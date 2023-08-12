@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar @search="handleSearch" />
+    <NavBar :users="users" @search="handleSearch" @toggle-details="toggleUserDetails" />
     <DatatablePage :users="filteredUsers" @delete-user="deleteUser" @edit-user="editUser" @toggle-details="toggleUserDetails" />
    </div>
 </template>
@@ -20,10 +20,11 @@ export default {
   data() {
     return {
       users: users.map(user => ({ ...user, detailsVisible: false })),
-      searchText: '', // Change this from searchUsername to searchText
+      searchText: '', 
       accessType: '',
       statusType: '',
       lableType: '',
+     
     };
   },
   computed: {
@@ -48,15 +49,20 @@ export default {
         filteredUsers = filteredUsers.filter(user => user.status === this.statusType);
       }
 
+      if (this.hideType) {
+        filteredUsers = filteredUsers.filter(user => user.hide === this.hideType);
+      }
+
       return filteredUsers;
     },
   },
   methods: {
-    handleSearch(searchText, accessType, statusType, lableType) {
+    handleSearch(searchText, accessType, statusType, lableType, hideType) {
       this.searchText = searchText;
       this.accessType = accessType;
       this.statusType = statusType;
       this.lableType = lableType;
+      this.hideType = hideType;
     },
     deleteUser(userToDelete) {
     // Find the index of the user to delete in the users array

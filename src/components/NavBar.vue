@@ -44,7 +44,17 @@
         <option value="user">User</option>
         <option value="auditor">Auditor</option>
         <option value="sales">Sales Rep</option>
-        </select> 
+        </select>  
+
+      <select
+      class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+      v-model="showHideOption" @change="handleShowHideOption">
+      <option value="">Show / hide</option>
+      <option value="show">Show all</option>
+      <option value="hide">Hide all</option>
+    </select>
+       
+
 
   </div>
 </template>
@@ -54,12 +64,16 @@
 
 export default {
   name: 'NavBar',
+  props: {
+    users: Array, // Make sure this prop is provided from the parent component
+  },
   data() {
     return {
     searchText: '',
     accessType: '',
     statusType: '',
     lableType: '',
+    showHideOption: '',
     };
   },
   methods: {
@@ -75,7 +89,12 @@ export default {
     handleLableChange() {
       this.$emit('search', this.searchText, this.accessType, this.statusType, this.lableType);
     },
-    
+    handleShowHideOption() {
+      const newVisibilityState = this.showHideOption === 'hide';
+      this.users.forEach(user => {
+        user.detailsVisible = newVisibilityState;
+      });
+    },
   },
 };
 </script>
