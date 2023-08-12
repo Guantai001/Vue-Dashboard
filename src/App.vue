@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <NavBar :users="users" @search="handleSearch" @toggle-details="toggleUserDetails" />
+    <NavBar 
+    :users="users" 
+    @search="handleSearch"
+    @toggle-details="toggleUserDetails" 
+  @date-sort="handleDateSort"
+    />
     <DatatablePage :users="filteredUsers" @delete-user="deleteUser" @edit-user="editUser" @toggle-details="toggleUserDetails" />
    </div>
 </template>
@@ -24,6 +29,7 @@ export default {
       accessType: '',
       statusType: '',
       lableType: '',
+      dateOrder: '',
      
     };
   },
@@ -52,18 +58,21 @@ export default {
       if (this.hideType) {
         filteredUsers = filteredUsers.filter(user => user.hide === this.hideType);
       }
+    
 
       return filteredUsers;
     },
   },
   methods: {
-    handleSearch(searchText, accessType, statusType, lableType, hideType) {
+    handleSearch(searchText, accessType, statusType, lableType, hideType, dateOrder) {
       this.searchText = searchText;
       this.accessType = accessType;
       this.statusType = statusType;
       this.lableType = lableType;
       this.hideType = hideType;
+      this.dateOrder = dateOrder;
     },
+    //delete user
     deleteUser(userToDelete) {
     // Find the index of the user to delete in the users array
     const indexToDelete = this.users.findIndex(user => user.id === userToDelete.id);
@@ -91,6 +100,13 @@ export default {
         this.users[indexToToggle].detailsVisible = !this.users[indexToToggle].detailsVisible;
       }
     },
+      handleDateSort(sortOrder) {
+      if (sortOrder === 'asc') {
+        this.users.sort((a, b) => new Date(a.date) - new Date(b.date));
+      } else if (sortOrder === 'desc') {
+        this.users.sort((a, b) => new Date(b.date) - new Date(a.date));
+      }
+    },
   },
 };
 </script>
@@ -98,7 +114,7 @@ export default {
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-   margin: 30px;
+  margin: 30px;
 }
 </style>
 

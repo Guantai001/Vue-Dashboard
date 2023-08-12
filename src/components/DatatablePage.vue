@@ -125,6 +125,7 @@ export default {
     totalPages() {
       return Math.ceil(this.users.length / this.itemsPerPage);
     },
+    
   },
   methods: {
     prevPage() {

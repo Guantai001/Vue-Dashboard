@@ -1,6 +1,6 @@
 export const users = [
   { id: 1, name: 'John Doe', username: "gatobu", access: "mobile & web", group: "1", status: "enabled", action: "1", date: "1/12/2023" ,lable:"admin"},
-  { id: 2, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2", date: "12/12/2019",lable:"user" },
+  { id: 2, name: 'Jane Smith', username: "janesmith", access: "web", group: "2", status: "disabled", action: "2", date: "1/2/2019",lable:"user" },
   { id: 3, name: 'Michael Johnson', username: "mikej", access: "mobile", group: "1", status: "enabled", action: "3", date: "12/12/2019",lable:"user" },
   { id: 4, name: 'Emily Brown', username: "emilyb", access: "mobile & web", group: "3", status: "enabled", action: "1", date: "23/12/2023" ,lable:"admin"},
   { id: 5, name: 'David Wilson', username: "dwilson", access: "web", group: "2", status: "disabled", action: "2", date: "12/11/23" ,lable:"sales"},

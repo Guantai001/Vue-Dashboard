@@ -13,19 +13,20 @@
     />
   </div>
   <div class="flex justify-between mt-5">
-    <select
-      class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
-      v-model="accessType"
-      @change="handleAccessChange"
-    >
-      <option value="">Select Access type</option>
-      <option value="web">Web</option>
-      <option value="mobile">Mobile</option>
-      <option value="mobile & web">Web & Mobile</option>
-    </select>
+  <div class="flex mx-5 ">
+        <select
+        class="h-8 px-3 mx-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+        v-model="accessType"
+        @change="handleAccessChange"
+        >
+        <option value="">Select Access type</option>
+        <option value="web">Web</option>
+        <option value="mobile">Mobile</option>
+        <option value="mobile & web">Web & Mobile</option>
+        </select>
 
-   <select
-        class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+        <select
+        class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
         v-model="statusType"
         @change="handleStatusChange"
         >
@@ -35,7 +36,7 @@
         </select>
 
         <select
-        class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+        class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
         v-model="lableType"
         @change="handleLableChange"
         >
@@ -45,15 +46,27 @@
         <option value="auditor">Auditor</option>
         <option value="sales">Sales Rep</option>
         </select>  
+        </div>
 
-      <select
-      class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
-      v-model="showHideOption" @change="handleShowHideOption">
-      <option value="">Show / hide</option>
-      <option value="show">Show all</option>
-      <option value="hide">Hide all</option>
-    </select>
-       
+<div class="flex mx-5">
+       <select
+       class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+       v-model="showHideOption" @change="handleShowHideOption">
+       <option value="">Show / hide</option>
+       <option value="show">Show all</option>
+       <option value="hide">Hide all</option>
+       </select>
+
+        <select
+         class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+          v-model="dateSortOrder"
+          @change="handleDateSort"
+          >
+          <option value="">Date Added</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+          </select>
+    </div>
 
 
   </div>
@@ -74,6 +87,7 @@ export default {
     statusType: '',
     lableType: '',
     showHideOption: '',
+    dateOrder: '',
     };
   },
   methods: {
@@ -89,12 +103,16 @@ export default {
     handleLableChange() {
       this.$emit('search', this.searchText, this.accessType, this.statusType, this.lableType);
     },
+    handleDateSort() {
+      this.$emit('date-sort', this.dateSortOrder);
+    },
     handleShowHideOption() {
       const newVisibilityState = this.showHideOption === 'hide';
       this.users.forEach(user => {
         user.detailsVisible = newVisibilityState;
       });
     },
+
   },
 };
 </script>
