@@ -4,9 +4,13 @@
     :users="users" 
     @search="handleSearch"
     @toggle-details="toggleUserDetails" 
-  @date-sort="handleDateSort"
+    @date-sort="handleDateSort"
     />
-    <DatatablePage :users="filteredUsers" @delete-user="deleteUser" @edit-user="editUser" @toggle-details="toggleUserDetails" />
+    <DatatablePage 
+    :users="filteredUsers" 
+    @delete-user="deleteUser" 
+    @edit-user="editUser" 
+    @toggle-details="toggleUserDetails" />
    </div>
 </template>
 
@@ -58,12 +62,11 @@ export default {
       if (this.hideType) {
         filteredUsers = filteredUsers.filter(user => user.hide === this.hideType);
       }
-    
-
       return filteredUsers;
     },
   },
   methods: {
+    //search user
     handleSearch(searchText, accessType, statusType, lableType, hideType, dateOrder) {
       this.searchText = searchText;
       this.accessType = accessType;
@@ -72,6 +75,7 @@ export default {
       this.hideType = hideType;
       this.dateOrder = dateOrder;
     },
+
     //delete user
     deleteUser(userToDelete) {
     // Find the index of the user to delete in the users array

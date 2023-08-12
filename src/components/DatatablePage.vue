@@ -24,7 +24,7 @@
             </tr>
           </thead>
           <tbody>
-      <tr class="bg-white border-b" v-for="user in paginatedUsers" :key="user.id">
+        <tr class="bg-white border-b" v-for="user in paginatedUsers" :key="user.id">
           <td class="px-6 py-4">
             <div>
               <div v-if="user.detailsVisible">****</div>
@@ -60,7 +60,7 @@
           <td class="px-6 py-4">
             <div class="flex">
               <i class="icon pi pi-pencil p-1 border rounded mx-1" @click="handleEditUser(user)"></i>
-<i
+              <i
                 class="icon pi"
                 :class="{
                   'pi-eye p-1 rounded border mx-1': !user.detailsVisible,
@@ -96,15 +96,17 @@
             </li>
           </ul>
         </nav>
-         <div>
+      <div>
     </div>
-        </div>
+  </div>
 
 </template>
 
 
 <script>
+
 import 'primeicons/primeicons.css';
+
 export default {
   props: {
     users:Array
@@ -125,7 +127,7 @@ export default {
     totalPages() {
       return Math.ceil(this.users.length / this.itemsPerPage);
     },
-    
+
   },
   methods: {
     prevPage() {

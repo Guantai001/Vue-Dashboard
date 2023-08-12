@@ -13,51 +13,55 @@
     />
   </div>
   <div class="flex justify-between mt-5">
-  <div class="flex mx-5 ">
-        <select
+    <div class="flex mx-2 ">
+
+
+      <select
         class="h-8 px-3 mx-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
         v-model="accessType"
         @change="handleAccessChange"
-        >
+      >
         <option value="">Select Access type</option>
         <option value="web">Web</option>
         <option value="mobile">Mobile</option>
         <option value="mobile & web">Web & Mobile</option>
-        </select>
+      </select>
 
-        <select
+
+      <select
         class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
         v-model="statusType"
         @change="handleStatusChange"
-        >
+      >
         <option value="">Select Status</option>
         <option value="enabled">Enabled</option>
         <option value="disabled">Disabled</option>
-        </select>
+      </select>
 
-        <select
+
+      <select
         class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
         v-model="lableType"
         @change="handleLableChange"
-        >
+      >
         <option value="">Select Label</option>
         <option value="admin">Admin</option>
         <option value="user">User</option>
         <option value="auditor">Auditor</option>
         <option value="sales">Sales Rep</option>
-        </select>  
-        </div>
+      </select>  
+    </div>
 
-<div class="flex mx-5">
-       <select
+   <div class="flex mx-5">
+      <select
        class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
        v-model="showHideOption" @change="handleShowHideOption">
        <option value="">Show / hide</option>
        <option value="show">Show all</option>
        <option value="hide">Hide all</option>
-       </select>
+      </select>
 
-        <select
+      <select
          class="h-8 mx-3 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
           v-model="dateSortOrder"
           @change="handleDateSort"
@@ -65,10 +69,8 @@
           <option value="">Date Added</option>
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
-          </select>
+      </select>
     </div>
-
-
   </div>
 </template>
 
@@ -78,7 +80,7 @@
 export default {
   name: 'NavBar',
   props: {
-    users: Array, // Make sure this prop is provided from the parent component
+    users: Array, // array of users
   },
   data() {
     return {
