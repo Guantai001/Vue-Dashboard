@@ -23,6 +23,7 @@ export default {
       searchText: '', // Change this from searchUsername to searchText
       accessType: '',
       statusType: '',
+      lableType: '',
     };
   },
   computed: {
@@ -39,6 +40,10 @@ export default {
         filteredUsers = filteredUsers.filter(user => user.access === this.accessType);
       }
 
+      if (this.lableType) {
+        filteredUsers = filteredUsers.filter(user => user.lable === this.lableType);
+      }
+
       if (this.statusType) {
         filteredUsers = filteredUsers.filter(user => user.status === this.statusType);
       }
@@ -47,10 +52,11 @@ export default {
     },
   },
   methods: {
-    handleSearch(searchText, accessType, statusType) {
+    handleSearch(searchText, accessType, statusType, lableType) {
       this.searchText = searchText;
       this.accessType = accessType;
       this.statusType = statusType;
+      this.lableType = lableType;
     },
   },
 };

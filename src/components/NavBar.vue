@@ -34,6 +34,18 @@
         <option value="disabled">Disabled</option>
         </select>
 
+        <select
+        class="h-8 px-3 pr-8 text-sm text-grey-darker bg-white border rounded outline-none mt-5 focus:outline-none focus:shadow-outline"
+        v-model="lableType"
+        @change="handleLableChange"
+        >
+        <option value="">Select Label</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+        <option value="auditor">Auditor</option>
+        <option value="sales">Sales Rep</option>
+        </select> 
+
   </div>
 </template>
 
@@ -45,17 +57,21 @@ export default {
     searchText: '',
     accessType: '',
     statusType: '',
+    lableType: '',
     };
   },
   methods: {
     handleSearch() {
-      this.$emit('search', this.searchText,this.accessType,this.statusType);
+      this.$emit('search', this.searchText,this.accessType,this.statusType, this.lableType);
     },
     handleAccessChange() {
-      this.$emit('search', this.searchText, this.accessType,this.statusType);
+      this.$emit('search', this.searchText, this.accessType,this.statusType, this.lableType);
     },
     handleStatusChange() {
-      this.$emit('search', this.searchText, this.accessType, this.statusType);
+      this.$emit('search', this.searchText, this.accessType, this.statusType, this.lableType);
+    },
+    handleLableChange() {
+      this.$emit('search', this.searchText, this.accessType, this.statusType, this.lableType);
     },
     
   },
