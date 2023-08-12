@@ -1,5 +1,6 @@
 <template>
     <div class="relative mt-10">
+    <div class="overflow-x-auto">
     <table class="w-full text-sm text-left text-gray-500 ">
         <thead class="text-xs text-gray-700 uppercase ">
             <tr>
@@ -74,6 +75,7 @@
         </tr>
           </tbody>
         </table>
+        </div>
         </div>
          <div class='flex m-4 justify-end'>
          <div class='flex  justify-between mx-20'>
